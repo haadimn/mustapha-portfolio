@@ -1,0 +1,48 @@
+name: Delete stale branches
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # weekly, Sunday midnight UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            // branches that must never be auto-deleted, in addition to the default branch
+            const EXCEPTIONS = ["main", "dev"];
+
+            const MAX_AGE_DAYS = 30;
+            const cutoff = Date.now() - MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
+
+            const { data: repo } = await github.rest.repos.get({ ...context.repo });
+            const protectedBranches = new Set([repo.default_branch, ...EXCEPTIONS]);
+
+            const branches = await github.paginate(github.rest.repos.listBranches, {
+              ...context.repo,
+              per_page: 100,
+            });
+
+            for (const branch of branches) {
+              if (protectedBranches.has(branch.name)) continue;
+
+              const { data: commit } = await github.rest.repos.getCommit({
+                ...context.repo,
+                ref: branch.commit.sha,
+              });
+              const lastCommitDate = new Date(commit.commit.committer.date).getTime();
+
+              if (lastCommitDate < cutoff) {
+                console.log(`Deleting stale branch: ${branch.name}`);
+                await github.rest.git.deleteRef({
+                  ...context.repo,
+                  ref: `heads/${branch.name}`,
+                });
+              }
+            }
