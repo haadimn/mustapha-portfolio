@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <title>portfolio</title>
     <style>
-      html, body { margin: 0; background: #000; }
+      html, body { margin: 0; height: 100%; background: #000; }
+      /* ponytail: KAPLAY appends its canvas straight into <body> (no `root`
+         option set), so body doubles as the shared positioned container for
+         canvas + #textbox-root. Upgrade path: if KAPLAY gets a dedicated
+         `root` wrapper later, move `position: relative` to that element. */
+      body { position: relative; }
     </style>
   </head>
   <body>
+    <div id="textbox-root"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
