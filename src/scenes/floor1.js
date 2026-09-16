@@ -1,7 +1,7 @@
 import { createPlayer } from "../objects/player.js";
 
-export function room1(k) {
-  k.scene("room1", () => {
+export function floor1(k) {
+  k.scene("floor1", () => {
     k.setBackground(20, 20, 20);
     createPlayer(k);
   });
