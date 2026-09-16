@@ -1,0 +1,29 @@
+:root {
+  /* ponytail: system-default typography for now — seam for a future
+     custom @font-face swap without touching textbox.js. */
+  --textbox-font-family: system-ui, sans-serif;
+  --textbox-font-size: 16px;
+  --textbox-line-height: 1.4;
+}
+
+/* Sits absolutely inside <body>, which doubles as the shared positioned
+   container for both the KAPLAY canvas and this overlay (see index.html). */
+#textbox-root {
+  position: absolute;
+  inset: 0;
+  display: none;
+  box-sizing: border-box;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: var(--textbox-font-family);
+  font-size: var(--textbox-font-size);
+  line-height: var(--textbox-line-height);
+  pointer-events: none;
+  z-index: 10;
+}
+
+#textbox-root.visible {
+  display: block;
+}

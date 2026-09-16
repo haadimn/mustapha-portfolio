@@ -54,7 +54,7 @@
                  "height":16,
                  "rotation":0,
                  "visible":true,
-                 "properties":[{"name":"frame","type":"int","value":126}]
+                 "properties":[{"name":"frame","type":"int","value":126}, {"name":"slug","type":"string","value":"example"}]
                 }]
         }],
  "nextlayerid":3,
