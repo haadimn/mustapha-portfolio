@@ -22,9 +22,43 @@
          "width":15,
          "x":0,
          "y":0
+        },
+        {
+         "id":2,
+         "name":"Props",
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0,
+         "objects":[
+                {
+                 "id":2,
+                 "name":"slab",
+                 "type":"prop",
+                 "x":96,
+                 "y":64,
+                 "width":16,
+                 "height":16,
+                 "rotation":0,
+                 "visible":true,
+                 "properties":[{"name":"frame","type":"int","value":57}]
+                },
+                {
+                 "id":1,
+                 "name":"computer",
+                 "type":"prop",
+                 "x":96,
+                 "y":64,
+                 "width":16,
+                 "height":16,
+                 "rotation":0,
+                 "visible":true,
+                 "properties":[{"name":"frame","type":"int","value":126}]
+                }]
         }],
- "nextlayerid":2,
- "nextobjectid":1,
+ "nextlayerid":3,
+ "nextobjectid":3,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.2",
