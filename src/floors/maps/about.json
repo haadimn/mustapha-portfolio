@@ -79,24 +79,18 @@
                  "id":3,
                  "name":"window karachi",
                  "opacity":1,
+                 "properties":[
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"example"
+                        }],
                  "rotation":0,
                  "type":"prop",
                  "visible":true,
                  "width":0,
                  "x":42.5612768383051,
                  "y":10.0323009690291
-                }, 
-                {
-                 "height":0,
-                 "id":4,
-                 "name":"",
-                 "opacity":1,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":149.572487174615,
-                 "y":179.973399201976
                 }],
          "opacity":1,
          "type":"objectgroup",

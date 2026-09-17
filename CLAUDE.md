@@ -2,11 +2,24 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project status
+## Commands
 
-This repository is currently empty (only a README title, no code, no build tooling, no framework chosen yet). There are no commands to run and no architecture to document.
+- `npm run dev` — start Vite dev server (http://localhost:5173)
+- `npm run build` — build production bundle to `dist/`
+- `npm run preview` — preview production build locally
 
-Update this file once the project is scaffolded: add build/lint/test commands and a high-level architecture overview at that point.
+No `test` or `lint` scripts are configured.
+
+## Architecture
+
+Entry point `src/main.js` initializes KAPLAY, registers touch controls, and loads the first floor scene. Modular organization:
+
+- `src/floors/` — scene definitions and floor registry; `floorScene.js` loads Tiled maps, tilesets, entities, and interactive markers
+- `src/objects/` — reusable game entities (`player.js` handles sprite and movement)
+- `src/ui/` — textbox system, markdown rendering, mobile touch controls
+- `src/content-loader.js` — loads portfolio content from `content/projects/` (markdown files)
+
+Maps are defined in Tiled and exported as JSON; tileset PNGs and metadata live in `src/tilesets/`. Raw art sources and Tiled files are in `art/` (not shipped). Production build outputs to `dist/`, deployed to GitHub Pages via CI/CD.
 
 ## Subagents
 
