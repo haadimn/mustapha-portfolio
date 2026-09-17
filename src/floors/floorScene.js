@@ -12,10 +12,14 @@ function renderProject(project) {
 }
 
 export function registerFloorScene(k) {
+  // Loaded once at registration, not per scene entry — k.scene() callbacks
+  // re-run on every k.go(), so loadSprite/loadProps here would re-decode the
+  // same art each time a floor is re-entered.
+  k.loadSprite("tileset", tilesetUrl);
+  loadProps(k);
+
   k.scene("floor", (def) => {
     k.setBackground(20, 20, 20);
-    k.loadSprite("tileset", tilesetUrl);
-    loadProps(k);
     k.addTiledMap(def.mapData, {
       sprite: "tileset",
       tiles: wallTileRules(k),
