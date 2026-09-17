@@ -166,6 +166,42 @@
                  "width":16,
                  "x":128,
                  "y":16
+                }, 
+                {
+                 "height":16,
+                 "id":18,
+                 "name":"phonebooth top",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"frame",
+                         "type":"int",
+                         "value":888
+                        }],
+                 "rotation":0,
+                 "type":"prop",
+                 "visible":true,
+                 "width":16,
+                 "x":33,
+                 "y":94
+                }, 
+                {
+                 "height":16,
+                 "id":20,
+                 "name":"phonebooth bottom",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"frame",
+                         "type":"int",
+                         "value":912
+                        }],
+                 "rotation":0,
+                 "type":"prop",
+                 "visible":true,
+                 "width":16,
+                 "x":33,
+                 "y":110
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -174,7 +210,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":18,
+ "nextobjectid":21,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.2",
@@ -184,12 +220,12 @@
          "columns":24,
          "firstgid":1,
          "image":"..\/..\/..\/art\/fused_tileset_master.png",
-         "imageheight":592,
+         "imageheight":624,
          "imagewidth":384,
          "margin":0,
          "name":"fused_tileset_master",
          "spacing":0,
-         "tilecount":888,
+         "tilecount":936,
          "tileheight":16,
          "tilewidth":16
         }],
