@@ -4,6 +4,12 @@ import { registerFloorScene } from "./floors/floorScene.js";
 import { floors } from "./floors/index.js";
 import { createTouchControls } from "./ui/touchControls.js";
 
+if (import.meta.hot) {
+  import.meta.hot.dispose(() => {
+    window.location.reload();
+  });
+}
+
 // ponytail: fixed to the "about" floor's pixel size, letterboxed to fill the window.
 // upgrade path: derive per-scene from the active floor's mapData if floors vary in size.
 const { width, height, tilewidth, tileheight } = floors.about.mapData;

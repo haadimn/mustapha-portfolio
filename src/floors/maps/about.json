@@ -3,9 +3,9 @@
  "infinite":false,
  "layers":[
         {
-         "data":[201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201,
-            201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201,
-            201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201,
+         "data":[142, 142, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162,
+            162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162,
+            201, 201, 221, 221, 221, 201, 201, 201, 221, 201, 201, 201, 201, 201, 201,
             201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201,
             201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201,
             201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201,
@@ -48,8 +48,8 @@
                  "type":"prop",
                  "visible":true,
                  "width":16,
-                 "x":96.6959908797264,
-                 "y":21.3908417252518
+                 "x":160.695990879726,
+                 "y":121.390841725252
                 }, 
                 {
                  "height":16,
@@ -71,8 +71,8 @@
                  "type":"prop",
                  "visible":true,
                  "width":16,
-                 "x":96.6080182405472,
-                 "y":15.3585407562227
+                 "x":160.608018240547,
+                 "y":115.358540756223
                 }, 
                 {
                  "gid":347,
@@ -148,6 +148,30 @@
                  "width":16,
                  "x":48,
                  "y":16
+                }, 
+                {
+                 "height":16,
+                 "id":15,
+                 "name":"elevator top",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"prop",
+                 "visible":true,
+                 "width":16,
+                 "x":128,
+                 "y":0
+                }, 
+                {
+                 "height":16,
+                 "id":17,
+                 "name":"elevator bottom",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"prop",
+                 "visible":true,
+                 "width":16,
+                 "x":128,
+                 "y":16
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -156,7 +180,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":15,
+ "nextobjectid":18,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.2",
@@ -211,6 +235,19 @@
          "name":"neo_zero_exterior_03_purple_yellow",
          "spacing":0,
          "tilecount":280,
+         "tileheight":16,
+         "tilewidth":16
+        }, 
+        {
+         "columns":24,
+         "firstgid":1161,
+         "image":"..\/..\/..\/art\/neo_zero_buildings_03_2_purple_yellow.png",
+         "imageheight":112,
+         "imagewidth":384,
+         "margin":0,
+         "name":"neo_zero_buildings_03_2_purple_yellow",
+         "spacing":0,
+         "tilecount":168,
          "tileheight":16,
          "tilewidth":16
         }],
