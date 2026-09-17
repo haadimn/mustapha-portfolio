@@ -5,7 +5,9 @@
       "Bash(file art/fused_tileset_master.png src/floors/tilesets/*.png art/*.png)",
       "Bash(grep -rn \"sheet\" src --include=\"*.js\")",
       "Bash(grep -rn \"loadProps\\\\|propsUrl\\\\|\\\\\"props\\\\\"\" src --include=\"*.js\")",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(grep -rn \"camPos\\\\|camScale\\\\|camera\\\\|Camera\\\\|\\\\.cam\\\\b\\\\|tween\\\\|follow\\\\|pan\\\\b\\\\|zoom\" src/ --include=\"*.js\")",
+      "Bash(cat package.json)"
     ]
   }
 }

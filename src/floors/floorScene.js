@@ -63,7 +63,7 @@ export function registerFloorScene(k) {
     player.onCollide("prop", (prop) => {
       if (prop.propName && propContent[prop.propName]) {
         touchedProps.add(prop.propName);
-        textbox.show(propContent[prop.propName]);
+        textbox.show(propContent[prop.propName], "oneliner");
       }
     });
     player.onCollideEnd("prop", (prop) => {
