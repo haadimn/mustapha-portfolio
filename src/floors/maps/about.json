@@ -75,22 +75,79 @@
                  "y":15.3585407562227
                 }, 
                 {
-                 "height":0,
-                 "id":3,
-                 "name":"window karachi",
+                 "gid":347,
+                 "height":16,
+                 "id":8,
+                 "name":"",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":56.5,
+                 "y":27
+                }, 
+                {
+                 "gid":347,
+                 "height":16,
+                 "id":11,
+                 "name":"",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":97.25,
+                 "y":35.25
+                }, 
+                {
+                 "gid":347,
+                 "height":16,
+                 "id":12,
+                 "name":"",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":88.5,
+                 "y":23
+                }, 
+                {
+                 "height":15,
+                 "id":13,
+                 "name":"",
                  "opacity":1,
                  "properties":[
                         {
-                         "name":"slug",
-                         "type":"string",
-                         "value":"example"
+                         "name":"frame",
+                         "type":"int",
+                         "value":22
                         }],
                  "rotation":0,
                  "type":"prop",
                  "visible":true,
-                 "width":0,
-                 "x":42.5612768383051,
-                 "y":10.0323009690291
+                 "width":16,
+                 "x":48,
+                 "y":1
+                }, 
+                {
+                 "height":11,
+                 "id":14,
+                 "name":"",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"frame",
+                         "type":"int",
+                         "value":42
+                        }],
+                 "rotation":0,
+                 "type":"prop",
+                 "visible":true,
+                 "width":16,
+                 "x":48,
+                 "y":16
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -98,8 +155,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":4,
- "nextobjectid":5,
+ "nextlayerid":7,
+ "nextobjectid":15,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.2",
@@ -108,6 +165,45 @@
         {
          "columns":20,
          "firstgid":1,
+         "image":"..\/tilesets\/neo_zero_exterior_03_purple_yellow.png",
+         "imageheight":224,
+         "imagewidth":320,
+         "margin":0,
+         "name":"neo_zero_exterior_03_purple_yellow",
+         "spacing":0,
+         "tilecount":280,
+         "tileheight":16,
+         "tilewidth":16
+        }, 
+        {
+         "columns":20,
+         "firstgid":281,
+         "image":"..\/tilesets\/neo_zero_props_03_03_purple_yellow.png",
+         "imageheight":240,
+         "imagewidth":320,
+         "margin":0,
+         "name":"neo_zero_props_03_03_purple_yellow",
+         "spacing":0,
+         "tilecount":300,
+         "tileheight":16,
+         "tilewidth":16
+        }, 
+        {
+         "columns":20,
+         "firstgid":581,
+         "image":"..\/tilesets\/neo_zero_props_03_03_purple_yellow.png",
+         "imageheight":240,
+         "imagewidth":320,
+         "margin":0,
+         "name":"neo_zero_props_03_03_purple_yellow",
+         "spacing":0,
+         "tilecount":300,
+         "tileheight":16,
+         "tilewidth":16
+        }, 
+        {
+         "columns":20,
+         "firstgid":881,
          "image":"..\/tilesets\/neo_zero_exterior_03_purple_yellow.png",
          "imageheight":224,
          "imagewidth":320,
