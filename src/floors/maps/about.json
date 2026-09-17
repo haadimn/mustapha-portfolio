@@ -38,7 +38,7 @@
                          "name":"frame",
                          "type":"int",
                          "value":57
-                        },
+                        }, 
                         {
                          "name":"slug",
                          "type":"string",
@@ -50,7 +50,7 @@
                  "width":16,
                  "x":96.6959908797264,
                  "y":21.3908417252518
-                },
+                }, 
                 {
                  "height":16,
                  "id":1,
@@ -73,6 +73,30 @@
                  "width":16,
                  "x":96.6080182405472,
                  "y":15.3585407562227
+                }, 
+                {
+                 "height":0,
+                 "id":3,
+                 "name":"window karachi",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"prop",
+                 "visible":true,
+                 "width":0,
+                 "x":42.5612768383051,
+                 "y":10.0323009690291
+                }, 
+                {
+                 "height":0,
+                 "id":4,
+                 "name":"",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":149.572487174615,
+                 "y":179.973399201976
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -81,7 +105,7 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":3,
+ "nextobjectid":5,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.2",

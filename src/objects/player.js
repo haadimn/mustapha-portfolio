@@ -1,10 +1,15 @@
-const SPEED = 200;
+import orangeCattoUrl from "./orange-catto-idle.png";
+
+const SPEED = 150;
+
+export function loadPlayerSprite(k) {
+  k.loadSprite("orangeCatto", orangeCattoUrl);
+}
 
 export function createPlayer(k) {
   const player = k.add([
-    k.rect(24, 24),
+    k.sprite("orangeCatto"),
     k.pos(160, 120),
-    k.color(255, 255, 255),
     k.area(),
     k.body(),
     "player",

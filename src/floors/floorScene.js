@@ -1,4 +1,4 @@
-import { createPlayer } from "../objects/player.js";
+import { createPlayer, loadPlayerSprite } from "../objects/player.js";
 import { addFloorBounds, wallTileRules } from "./walls.js";
 import { loadProps, propObjectRules } from "./props.js";
 import { markerObjectRules } from "./markers.js";
@@ -24,6 +24,7 @@ export function registerFloorScene(k) {
     k.loadSprite(tilesetKey(floor.id), floor.tilesetUrl);
   }
   loadProps(k);
+  loadPlayerSprite(k);
 
   k.scene("floor", (def) => {
     k.setBackground(20, 20, 20);
