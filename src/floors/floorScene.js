@@ -1,6 +1,6 @@
 import { createPlayer, loadPlayerSprite } from "../objects/player.js";
 import { addFloorBounds, wallTileRules } from "./walls.js";
-import { loadProps, propObjectRules } from "./props.js";
+import { propObjectRules } from "./props.js";
 import { markerObjectRules } from "./markers.js";
 import { floors } from "./index.js";
 import { createTextBox } from "../ui/textbox.js";
@@ -42,7 +42,6 @@ export function registerFloorScene(k) {
       sliceY: ts.tilecount / ts.columns,
     });
   }
-  loadProps(k);
   loadPlayerSprite(k);
 
   k.scene("floor", (def) => {

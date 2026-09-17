@@ -1,5 +1,5 @@
 import aboutMap from "./maps/about.json";
-import aboutTileset from "./tilesets/neo_zero_exterior_03_purple_yellow.png";
+import aboutTileset from "../../art/fused_tileset_master.png";
 
 export const floors = {
   // spawn: not consumed yet — wired up in the spawn-point step.
