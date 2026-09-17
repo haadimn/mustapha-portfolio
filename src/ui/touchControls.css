@@ -1,0 +1,51 @@
+/* Sits absolutely inside <body>, same shared positioned container as
+   #textbox-root (see index.html). */
+#touch-controls-root {
+  position: absolute;
+  inset: 0;
+  display: none;
+  pointer-events: none;
+  z-index: 20;
+  touch-action: none;
+}
+
+#touch-controls-root.visible {
+  display: block;
+}
+
+.dpad {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  width: 132px;
+  height: 132px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.dpad-up { grid-area: 1 / 2; }
+.dpad-left { grid-area: 2 / 1; }
+.dpad-right { grid-area: 2 / 3; }
+.dpad-down { grid-area: 3 / 2; }
+
+.dpad-btn,
+.interact-btn {
+  pointer-events: auto;
+  touch-action: none;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+.interact-btn {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}

@@ -10,10 +10,10 @@ export function createPlayer(k) {
     "player",
   ]);
 
-  k.onKeyDown("left", () => player.move(-SPEED, 0));
-  k.onKeyDown("right", () => player.move(SPEED, 0));
-  k.onKeyDown("up", () => player.move(0, -SPEED));
-  k.onKeyDown("down", () => player.move(0, SPEED));
+  k.onButtonDown("left", () => player.move(-SPEED, 0));
+  k.onButtonDown("right", () => player.move(SPEED, 0));
+  k.onButtonDown("up", () => player.move(0, -SPEED));
+  k.onButtonDown("down", () => player.move(0, SPEED));
 
   return player;
 }
