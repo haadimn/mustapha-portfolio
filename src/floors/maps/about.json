@@ -22,42 +22,65 @@
          "width":15,
          "x":0,
          "y":0
-        },
+        }, 
         {
+         "draworder":"topdown",
          "id":2,
          "name":"Props",
+         "objects":[
+                {
+                 "height":16,
+                 "id":2,
+                 "name":"slab",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"frame",
+                         "type":"int",
+                         "value":57
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"example"
+                        }],
+                 "rotation":0,
+                 "type":"prop",
+                 "visible":true,
+                 "width":16,
+                 "x":96.6959908797264,
+                 "y":21.3908417252518
+                },
+                {
+                 "height":16,
+                 "id":1,
+                 "name":"computer",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"frame",
+                         "type":"int",
+                         "value":126
+                        }, 
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"example"
+                        }],
+                 "rotation":0,
+                 "type":"prop",
+                 "visible":true,
+                 "width":16,
+                 "x":96.6080182405472,
+                 "y":15.3585407562227
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
          "x":0,
-         "y":0,
-         "objects":[
-                {
-                 "id":2,
-                 "name":"slab",
-                 "type":"prop",
-                 "x":96,
-                 "y":64,
-                 "width":16,
-                 "height":16,
-                 "rotation":0,
-                 "visible":true,
-                 "properties":[{"name":"frame","type":"int","value":57}]
-                },
-                {
-                 "id":1,
-                 "name":"computer",
-                 "type":"prop",
-                 "x":96,
-                 "y":64,
-                 "width":16,
-                 "height":16,
-                 "rotation":0,
-                 "visible":true,
-                 "properties":[{"name":"frame","type":"int","value":126}, {"name":"slug","type":"string","value":"example"}]
-                }]
+         "y":0
         }],
- "nextlayerid":3,
+ "nextlayerid":4,
  "nextobjectid":3,
  "orientation":"orthogonal",
  "renderorder":"right-down",
@@ -67,7 +90,7 @@
         {
          "columns":20,
          "firstgid":1,
-         "image":"neo_zero_exterior_03_purple_yellow.png",
+         "image":"..\/tilesets\/neo_zero_exterior_03_purple_yellow.png",
          "imageheight":224,
          "imagewidth":320,
          "margin":0,
