@@ -4,8 +4,10 @@ import { propObjectRules } from "./props.js";
 import { markerObjectRules } from "./markers.js";
 import { floors } from "./index.js";
 import { createTextBox } from "../ui/textbox.js";
+import { createGifOverlay } from "../ui/gifOverlay.js";
 import { renderMarkdown } from "../ui/markdown.js";
 import { projects } from "../content-loader.js";
+import karachiGif from "../../art/8bit karachi.gif";
 
 function renderProject(project) {
   return renderMarkdown(project.raw);
@@ -54,9 +56,10 @@ export function registerFloorScene(k) {
     addFloorBounds(k, def.mapData);
     const player = createPlayer(k);
     const textbox = createTextBox();
+    const gifOverlay = createGifOverlay();
 
     const propContent = {
-      window: "It's never raining in Karachi",
+      window: "... somehow it's never raining in Karachi",
     };
 
     const touchedProps = new Set();
@@ -64,12 +67,16 @@ export function registerFloorScene(k) {
       if (prop.propName && propContent[prop.propName]) {
         touchedProps.add(prop.propName);
         textbox.show(propContent[prop.propName], "oneliner");
+        if (prop.propName === "window") gifOverlay.show(karachiGif);
       }
     });
     player.onCollideEnd("prop", (prop) => {
       if (prop.propName) {
         touchedProps.delete(prop.propName);
-        if (touchedProps.size === 0) textbox.hide();
+        if (touchedProps.size === 0) {
+          textbox.hide();
+          gifOverlay.hide();
+        }
       }
     });
 
