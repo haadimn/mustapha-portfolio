@@ -34,6 +34,9 @@
 .interact-btn {
   pointer-events: auto;
   touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
   background: rgba(255, 255, 255, 0.15);
   border: 2px solid #fff;
   color: #fff;
