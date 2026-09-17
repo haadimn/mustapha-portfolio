@@ -15,14 +15,29 @@ function tilesetKey(floorId) {
   return floorId + "-tileset";
 }
 
+// Same image as tilesetKey, sliced into frames. Needed as a separate sprite:
+// the map plugin draws tile layers with drawSprite({quad}) normalized to the
+// whole image, and KAPLAY multiplies that quad by frames[0] — so the sprite
+// addTiledMap uses must stay unsliced or every tile samples cell 0.
+function tilesetFrameKey(floorId) {
+  return floorId + "-tileset-frames";
+}
+
 export function registerFloorScene(k) {
   // Loaded once at registration, not per scene entry — k.scene() callbacks
   // re-run on every k.go(), so loading here would re-decode the same art
   // each time a floor is re-entered. Keyed per floor id so distinct floors'
   // tilesets don't collide under one shared sprite name.
   for (const floor of Object.values(floors)) {
+    // Tiled re-embeds every tileset open in its panel on each save, but
+    // addTiledMap accepts exactly one. Keep the first (firstgid 1) — the only
+    // one tile layers draw from; props resolve frames through props.js instead.
+    // ponytail: throws "Tile gid outside the supported tileset range" if a tile
+    // layer ever stamps from a second sheet. Merge the sheets if that happens.
+    floor.mapData.tilesets.length = 1;
     const ts = floor.mapData.tilesets[0];
-    k.loadSprite(tilesetKey(floor.id), floor.tilesetUrl, {
+    k.loadSprite(tilesetKey(floor.id), floor.tilesetUrl);
+    k.loadSprite(tilesetFrameKey(floor.id), floor.tilesetUrl, {
       sliceX: ts.columns,
       sliceY: ts.tilecount / ts.columns,
     });
@@ -35,7 +50,7 @@ export function registerFloorScene(k) {
     k.addTiledMap(def.mapData, {
       sprite: tilesetKey(def.id),
       tiles: wallTileRules(k),
-      objects: [...propObjectRules(k, tilesetKey(def.id)), ...markerObjectRules(k)],
+      objects: [...propObjectRules(k, tilesetFrameKey(def.id)), ...markerObjectRules(k)],
     });
     addFloorBounds(k, def.mapData);
     const player = createPlayer(k);

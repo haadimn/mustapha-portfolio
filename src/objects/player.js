@@ -10,6 +10,9 @@ export function createPlayer(k) {
   const player = k.add([
     k.sprite("orangeCatto"),
     k.pos(160, 120),
+    // addTiledMap gives each Tiled layer z(layerIndex), so the player needs a z
+    // above the layer count or the floor and props draw over it.
+    k.z(100),
     k.area(),
     k.body(),
     "player",
