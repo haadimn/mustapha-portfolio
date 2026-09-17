@@ -10,11 +10,12 @@ export function propObjectRules(k, tilesetSpriteKey) {
   return [
     {
       match: { type: "prop" },
-      comps: ({ width, height, properties }) => [
+      comps: ({ name, width, height, properties }) => [
         k.sprite(properties.sheet === "tileset" ? tilesetSpriteKey : "props", { frame: properties.frame ?? 0 }),
         k.area({ shape: new k.Rect(k.vec2(), width, height) }),
         k.body({ isStatic: true }),
         "prop",
+        { propName: name },
       ],
     },
   ];

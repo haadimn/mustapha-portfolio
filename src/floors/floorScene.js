@@ -56,11 +56,23 @@ export function registerFloorScene(k) {
     const player = createPlayer(k);
     const textbox = createTextBox();
 
-    let nearbyProp = null;
-    player.onCollideUpdate("prop", (prop) => (nearbyProp = prop));
-    player.onCollideEnd("prop", () => (nearbyProp = null));
-    // ponytail: logs only, no dialog/UI system yet. Add one when a prop needs to show content.
-    k.onButtonPress("interact", () => nearbyProp && console.log("interacted with prop"));
+    const propContent = {
+      window: "It's never raining in Karachi",
+    };
+
+    const touchedProps = new Set();
+    player.onCollide("prop", (prop) => {
+      if (prop.propName && propContent[prop.propName]) {
+        touchedProps.add(prop.propName);
+        textbox.show(propContent[prop.propName]);
+      }
+    });
+    player.onCollideEnd("prop", (prop) => {
+      if (prop.propName) {
+        touchedProps.delete(prop.propName);
+        if (touchedProps.size === 0) textbox.hide();
+      }
+    });
 
     // ponytail: Set of touched slugs so leaving one overlapping marker
     // doesn't hide the box while another is still touched; last-entered wins.
