@@ -40,7 +40,7 @@ export function registerFloorScene(k) {
     player.onCollideUpdate("prop", (prop) => (nearbyProp = prop));
     player.onCollideEnd("prop", () => (nearbyProp = null));
     // ponytail: logs only, no dialog/UI system yet. Add one when a prop needs to show content.
-    k.onKeyPress("space", () => nearbyProp && console.log("interacted with prop"));
+    k.onButtonPress("interact", () => nearbyProp && console.log("interacted with prop"));
 
     // ponytail: Set of touched slugs so leaving one overlapping marker
     // doesn't hide the box while another is still touched; last-entered wins.
