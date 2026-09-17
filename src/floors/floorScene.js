@@ -21,7 +21,11 @@ export function registerFloorScene(k) {
   // each time a floor is re-entered. Keyed per floor id so distinct floors'
   // tilesets don't collide under one shared sprite name.
   for (const floor of Object.values(floors)) {
-    k.loadSprite(tilesetKey(floor.id), floor.tilesetUrl);
+    const ts = floor.mapData.tilesets[0];
+    k.loadSprite(tilesetKey(floor.id), floor.tilesetUrl, {
+      sliceX: ts.columns,
+      sliceY: ts.tilecount / ts.columns,
+    });
   }
   loadProps(k);
   loadPlayerSprite(k);
@@ -31,7 +35,7 @@ export function registerFloorScene(k) {
     k.addTiledMap(def.mapData, {
       sprite: tilesetKey(def.id),
       tiles: wallTileRules(k),
-      objects: [...propObjectRules(k), ...markerObjectRules(k)],
+      objects: [...propObjectRules(k, tilesetKey(def.id)), ...markerObjectRules(k)],
     });
     addFloorBounds(k, def.mapData);
     const player = createPlayer(k);

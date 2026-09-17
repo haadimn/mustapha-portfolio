@@ -6,12 +6,12 @@ export function loadProps(k) {
 
 // Matches Tiled objects (not tiles) with class "prop" — props live on their own
 // object layer so they can pull sprites from a different tileset than the floor.
-export function propObjectRules(k) {
+export function propObjectRules(k, tilesetSpriteKey) {
   return [
     {
       match: { type: "prop" },
       comps: ({ width, height, properties }) => [
-        k.sprite("props", { frame: properties.frame ?? 0 }),
+        k.sprite(properties.sheet === "tileset" ? tilesetSpriteKey : "props", { frame: properties.frame ?? 0 }),
         k.area({ shape: new k.Rect(k.vec2(), width, height) }),
         k.body({ isStatic: true }),
         "prop",
