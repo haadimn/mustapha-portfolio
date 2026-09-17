@@ -19,7 +19,7 @@ Entry point `src/main.js` initializes KAPLAY, registers touch controls, and load
 - `src/ui/` — textbox system, markdown rendering, mobile touch controls
 - `src/content-loader.js` — loads portfolio content from `content/projects/` (markdown files)
 
-Maps are defined in Tiled and exported as JSON; tileset PNGs and metadata live in `src/tilesets/`. Raw art sources and Tiled files are in `art/` (not shipped). Production build outputs to `dist/`, deployed to GitHub Pages via CI/CD.
+Maps are defined in Tiled and exported as JSON; the tileset image is `art/fused_tileset_master.png`, imported via `src/floors/index.js` and referenced by `src/floors/maps/about.json`. Production build outputs to `dist/`, deployed to GitHub Pages via CI/CD.
 
 ## Subagents
 

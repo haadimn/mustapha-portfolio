@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(file art/fused_tileset_master.png src/floors/tilesets/*.png art/*.png)",
+      "Bash(grep -rn \"sheet\" src --include=\"*.js\")",
+      "Bash(grep -rn \"loadProps\\\\|propsUrl\\\\|\\\\\"props\\\\\"\" src --include=\"*.js\")",
+      "Bash(npm run *)"
+    ]
+  }
+}

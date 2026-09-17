@@ -3,16 +3,16 @@
  "infinite":false,
  "layers":[
         {
-         "data":[142, 142, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162,
-            162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162, 162,
-            201, 201, 221, 221, 221, 201, 201, 201, 221, 201, 201, 201, 201, 201, 201,
-            201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201,
-            201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201,
-            201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201,
-            201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201,
-            201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201,
-            201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201,
-            201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201, 201],
+         "data":[362, 362, 362, 362, 362, 362, 362, 362, 362, 362, 362, 362, 362, 362, 362,
+            362, 362, 362, 362, 362, 362, 362, 362, 362, 362, 362, 362, 362, 362, 362,
+            433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433,
+            433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433,
+            433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433,
+            433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433,
+            433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433,
+            433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433,
+            433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433,
+            433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433, 433],
          "height":10,
          "id":1,
          "name":"Tile Layer 1",
@@ -37,7 +37,7 @@
                         {
                          "name":"frame",
                          "type":"int",
-                         "value":57
+                         "value":762
                         }, 
                         {
                          "name":"slug",
@@ -60,7 +60,7 @@
                         {
                          "name":"frame",
                          "type":"int",
-                         "value":126
+                         "value":678
                         }, 
                         {
                          "name":"slug",
@@ -75,45 +75,6 @@
                  "y":115.358540756223
                 }, 
                 {
-                 "gid":347,
-                 "height":16,
-                 "id":8,
-                 "name":"",
-                 "opacity":1,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":56.5,
-                 "y":27
-                }, 
-                {
-                 "gid":347,
-                 "height":16,
-                 "id":11,
-                 "name":"",
-                 "opacity":1,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":97.25,
-                 "y":35.25
-                }, 
-                {
-                 "gid":347,
-                 "height":16,
-                 "id":12,
-                 "name":"",
-                 "opacity":1,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":88.5,
-                 "y":23
-                }, 
-                {
                  "height":15,
                  "id":13,
                  "name":"window",
@@ -122,7 +83,7 @@
                         {
                          "name":"frame",
                          "type":"int",
-                         "value":22
+                         "value":554
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -140,7 +101,7 @@
                         {
                          "name":"frame",
                          "type":"int",
-                         "value":42
+                         "value":578
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -154,6 +115,12 @@
                  "id":15,
                  "name":"elevator top",
                  "opacity":1,
+                 "properties":[
+                        {
+                         "name":"frame",
+                         "type":"int",
+                         "value":160
+                        }],
                  "rotation":0,
                  "type":"prop",
                  "visible":true,
@@ -166,6 +133,12 @@
                  "id":17,
                  "name":"elevator bottom",
                  "opacity":1,
+                 "properties":[
+                        {
+                         "name":"frame",
+                         "type":"int",
+                         "value":184
+                        }],
                  "rotation":0,
                  "type":"prop",
                  "visible":true,
@@ -187,67 +160,15 @@
  "tileheight":16,
  "tilesets":[
         {
-         "columns":20,
-         "firstgid":1,
-         "image":"..\/tilesets\/neo_zero_exterior_03_purple_yellow.png",
-         "imageheight":224,
-         "imagewidth":320,
-         "margin":0,
-         "name":"neo_zero_exterior_03_purple_yellow",
-         "spacing":0,
-         "tilecount":280,
-         "tileheight":16,
-         "tilewidth":16
-        }, 
-        {
-         "columns":20,
-         "firstgid":281,
-         "image":"..\/tilesets\/neo_zero_props_03_03_purple_yellow.png",
-         "imageheight":240,
-         "imagewidth":320,
-         "margin":0,
-         "name":"neo_zero_props_03_03_purple_yellow",
-         "spacing":0,
-         "tilecount":300,
-         "tileheight":16,
-         "tilewidth":16
-        }, 
-        {
-         "columns":20,
-         "firstgid":581,
-         "image":"..\/tilesets\/neo_zero_props_03_03_purple_yellow.png",
-         "imageheight":240,
-         "imagewidth":320,
-         "margin":0,
-         "name":"neo_zero_props_03_03_purple_yellow",
-         "spacing":0,
-         "tilecount":300,
-         "tileheight":16,
-         "tilewidth":16
-        }, 
-        {
-         "columns":20,
-         "firstgid":881,
-         "image":"..\/tilesets\/neo_zero_exterior_03_purple_yellow.png",
-         "imageheight":224,
-         "imagewidth":320,
-         "margin":0,
-         "name":"neo_zero_exterior_03_purple_yellow",
-         "spacing":0,
-         "tilecount":280,
-         "tileheight":16,
-         "tilewidth":16
-        }, 
-        {
          "columns":24,
-         "firstgid":1161,
-         "image":"..\/..\/..\/art\/neo_zero_buildings_03_2_purple_yellow.png",
-         "imageheight":112,
+         "firstgid":1,
+         "image":"..\/..\/..\/art\/fused_tileset_master.png",
+         "imageheight":592,
          "imagewidth":384,
          "margin":0,
-         "name":"neo_zero_buildings_03_2_purple_yellow",
+         "name":"fused_tileset_master",
          "spacing":0,
-         "tilecount":168,
+         "tilecount":888,
          "tileheight":16,
          "tilewidth":16
         }],
