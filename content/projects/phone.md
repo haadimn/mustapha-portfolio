@@ -1,3 +1,3 @@
 # Phone
 
-Always on call, never picking up.
+Central phone

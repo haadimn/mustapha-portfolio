@@ -1,3 +1,3 @@
-# Computer Desk
+# Computa
 
-I wonder what Ahzam is up to 
+All professional academic stuff will go here

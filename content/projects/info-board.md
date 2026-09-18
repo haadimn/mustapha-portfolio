@@ -1,3 +1,3 @@
 # Info Board
 
-Everything you need to know, pinned right here.
+I'll pin my collaborators and credits heres

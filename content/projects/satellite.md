@@ -1,3 +1,3 @@
-# Satellite
+# Visual Art Portfolio
 
-Beaming signal out into the void.
+If you interact with this satellite you'll see my visual art portfolio 

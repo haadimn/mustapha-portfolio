@@ -1,3 +1,3 @@
-# DJ Setup
+# Turntables
 
-Where the beats get made.
+My Musical and DJ Portfolio will go here
