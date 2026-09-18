@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "Not Jam Mono Clean 8";
-  src: url("../../art/fonts/NotJamMonoClean8/Not Jam Mono Clean 8.ttf") format("truetype");
+  font-family: "Not Jam Sci Mono 10";
+  src: url("../../art/fonts/NotJamSciMono10/NotJamSciMono10.ttf") format("truetype");
   font-display: swap;
 }
 
 :root {
-  --textbox-font-family: "Not Jam Mono Clean 8", monospace;
+  --textbox-font-family: "Not Jam Sci Mono 10", monospace;
   --textbox-font-size: 13px;
   --textbox-line-height: 1.4;
   --textbox-heading-scale: 1.2;
@@ -71,6 +71,13 @@
 
 #textbox-root.textbox-root--small {
   background: rgba(0, 0, 0, 0.85);
+  overflow-y: auto;
+}
+
+/* Classic RPG dialogue box: flush to the bottom edge, full width. */
+#textbox-root.textbox-root--rpg {
+  background: rgba(0, 0, 0, 0.9);
+  border-width: 3px 0 0 0;
   overflow-y: auto;
 }
 
