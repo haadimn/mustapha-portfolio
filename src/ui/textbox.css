@@ -1,8 +1,12 @@
+@font-face {
+  font-family: "Not Jam Mono Clean 8";
+  src: url("../../art/fonts/NotJamMonoClean8/Not Jam Mono Clean 8.ttf") format("truetype");
+  font-display: swap;
+}
+
 :root {
-  /* ponytail: system-default typography for now — seam for a future
-     custom @font-face swap without touching textbox.js. */
-  --textbox-font-family: system-ui, sans-serif;
-  --textbox-font-size: 16px;
+  --textbox-font-family: "Not Jam Mono Clean 8", monospace;
+  --textbox-font-size: 13px;
   --textbox-line-height: 1.4;
   --textbox-heading-scale: 1.2;
 }
@@ -19,6 +23,8 @@
   font-family: var(--textbox-font-family);
   font-size: var(--textbox-font-size);
   line-height: var(--textbox-line-height);
+  -webkit-font-smoothing: none;
+  font-smooth: never;
   pointer-events: none;
   z-index: 10;
   overflow: hidden;
