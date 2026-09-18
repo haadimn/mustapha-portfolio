@@ -7,7 +7,10 @@
       "Bash(grep -rn \"loadProps\\\\|propsUrl\\\\|\\\\\"props\\\\\"\" src --include=\"*.js\")",
       "Bash(npm run *)",
       "Bash(grep -rn \"camPos\\\\|camScale\\\\|camera\\\\|Camera\\\\|\\\\.cam\\\\b\\\\|tween\\\\|follow\\\\|pan\\\\b\\\\|zoom\" src/ --include=\"*.js\")",
-      "Bash(cat package.json)"
+      "Bash(cat package.json)",
+      "Bash(grep -ni \"tiled\" node_modules/kaplay/dist/doc.d.ts)",
+      "Bash(cat node_modules/kaplay/package.json)",
+      "Bash(cat src/main.js)"
     ]
   }
 }
