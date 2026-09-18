@@ -16,7 +16,7 @@ function linkify(str) {
 // syntax for later). Upgrade path: swap this function's body for a real
 // markdown lib (e.g. `marked`) if project content grows past this.
 export function renderMarkdown(raw) {
-  const blocks = raw.trim().split(/\n\s*\n+/);
+  const blocks = raw.replace(/\r\n/g, "\n").trim().split(/\n\s*\n+/);
 
   return blocks
     .map((block) => {

@@ -84,7 +84,7 @@
                         {
                          "name":"slug",
                          "type":"string",
-                         "value":"example"
+                         "value":"computer-desk"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -103,7 +103,7 @@
                          "name":"frame",
                          "type":"int",
                          "value":678
-                        },
+                        }, 
                         {
                          "name":"slug",
                          "type":"string",
@@ -126,7 +126,7 @@
                          "name":"frame",
                          "type":"int",
                          "value":554
-                        },
+                        }, 
                         {
                          "name":"slug",
                          "type":"string",
@@ -149,7 +149,7 @@
                          "name":"frame",
                          "type":"int",
                          "value":578
-                        },
+                        }, 
                         {
                          "name":"slug",
                          "type":"string",
@@ -213,8 +213,8 @@
                  "type":"prop",
                  "visible":true,
                  "width":16,
-                 "x":191.75,
-                 "y":11
+                 "x":205.568181818182,
+                 "y":11.1818181818182
                 }, 
                 {
                  "height":16,
@@ -414,6 +414,24 @@
                  "width":16,
                  "x":140,
                  "y":121
+                }, 
+                {
+                 "height":16,
+                 "id":39,
+                 "name":"info board ",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"frame",
+                         "type":"int",
+                         "value":745
+                        }],
+                 "rotation":0,
+                 "type":"prop",
+                 "visible":true,
+                 "width":16,
+                 "x":153,
+                 "y":11.2727272727273
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -433,7 +451,7 @@
          "y":0
         }],
  "nextlayerid":10,
- "nextobjectid":39,
+ "nextobjectid":40,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.2",
