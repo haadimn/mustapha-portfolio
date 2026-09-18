@@ -208,6 +208,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":936
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"phone"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -226,6 +231,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":538
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"satellite"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -244,6 +254,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":562
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"satellite"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -262,6 +277,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":586
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"satellite"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -280,6 +300,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":732
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"dj-setup"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -298,6 +323,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":733
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"dj-setup"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -316,6 +346,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":734
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"dj-setup"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -334,6 +369,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":915
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"dj-setup"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -352,6 +392,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":916
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"dj-setup"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -371,6 +416,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":917
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"dj-setup"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -389,6 +439,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":891
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"dj-setup"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -407,6 +462,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":893
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"dj-setup"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -425,6 +485,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":745
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"info-board"
                         }],
                  "rotation":0,
                  "type":"prop",
