@@ -1,7 +1,7 @@
 import { createPlayer, loadPlayerSprite } from "../objects/player.js";
 import { addFloorBounds, wallTileRules } from "./walls.js";
 import { propObjectRules } from "./props.js";
-import { markerObjectRules } from "./markers.js";
+import { markerObjectRules, findSpawnPos } from "./markers.js";
 import { floors } from "./index.js";
 import { createTextBox } from "../ui/textbox.js";
 import { createGifOverlay } from "../ui/gifOverlay.js";
@@ -58,16 +58,24 @@ export function registerFloorScene(k) {
       objects: [...propObjectRules(k, tilesetFrameKey(def.id)), ...markerObjectRules(k)],
     });
     addFloorBounds(k, def.mapData);
-    const player = createPlayer(k);
+    const spawn = findSpawnPos(def.mapData, def.spawn);
+    const player = createPlayer(k, spawn ? k.vec2(spawn.x, spawn.y) : undefined);
     const textbox = createTextBox();
     const gifOverlay = createGifOverlay();
 
     const propConfig = floorPropConfigs[def.id] ?? {};
 
+    // Intro gate: re-armed every scene load (page load/refresh), no
+    // persistence needed. Blocks every marker but the phone until answered.
+    let phoneAnswered = false;
+    textbox.show("The phone is ringing...", "oneliner");
+
     // ponytail: Set of touched slugs so leaving one overlapping marker
     // doesn't hide the box while another is still touched; last-entered wins.
     const touchedSlugs = new Set();
     player.onCollide("project-marker", (marker) => {
+      if (!phoneAnswered && marker.slug !== "phone") return;
+      if (marker.slug === "phone") phoneAnswered = true;
       touchedSlugs.add(marker.slug);
       const project = projects.find((p) => p.slug === marker.slug);
       const config = propConfig[marker.slug] ?? {};
@@ -75,6 +83,7 @@ export function registerFloorScene(k) {
       if (config.gif) gifOverlay.show(config.gif);
     });
     player.onCollideEnd("project-marker", (marker) => {
+      if (!phoneAnswered && marker.slug !== "phone") return;
       touchedSlugs.delete(marker.slug);
       if (touchedSlugs.size === 0) {
         textbox.hide();

@@ -6,10 +6,10 @@ export function loadPlayerSprite(k) {
   k.loadSprite("orangeCatto", orangeCattoUrl);
 }
 
-export function createPlayer(k) {
+export function createPlayer(k, pos = k.vec2(160, 120)) {
   const player = k.add([
     k.sprite("orangeCatto"),
-    k.pos(160, 120),
+    k.pos(pos),
     // addTiledMap gives each Tiled layer z(layerIndex), so the player needs a z
     // above the layer count or the floor and props draw over it.
     k.z(100),
