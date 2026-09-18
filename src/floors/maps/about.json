@@ -103,11 +103,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":678
-                        }, 
+                        },
                         {
                          "name":"slug",
                          "type":"string",
-                         "value":"example"
+                         "value":"computer"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -126,6 +126,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":554
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"window"
                         }],
                  "rotation":0,
                  "type":"prop",
@@ -144,6 +149,11 @@
                          "name":"frame",
                          "type":"int",
                          "value":578
+                        },
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"window"
                         }],
                  "rotation":0,
                  "type":"prop",
