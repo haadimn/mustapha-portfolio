@@ -4,8 +4,8 @@
 
 thanks for stopping by tho it's good to see you
 
-welcome to my cyberspace, there's lots to do but for now you can walk around and see where things go 
+welcome to my cyberspace, there's lots to do but for now you can walk around and see where things go and shoot me your thoughts on the mechanics and aesthetics
 
-give me a shout once youre done"
+yk how to reach me"
 
 - mustapha

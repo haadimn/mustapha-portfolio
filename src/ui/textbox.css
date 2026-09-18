@@ -6,7 +6,7 @@
 
 :root {
   --textbox-font-family: "Not Jam Sci Mono 10", monospace;
-  --textbox-font-size: 15px;
+  --textbox-font-size: 20px;
   --textbox-line-height: 1.4;
   --textbox-heading-scale: 1.2;
 }
@@ -79,6 +79,15 @@
   background: rgba(0, 0, 0, 0.9);
   border-width: 3px 0 0 0;
   overflow-y: auto;
+}
+
+/* Touch controls (dpad + interact button) sit at bottom:16px up to 148px
+   tall (see touchControls.css). Lift the rpg box clear of that zone on the
+   same coarse-pointer devices that show those controls (touchControls.js). */
+@media (pointer: coarse) {
+  #textbox-root.textbox-root--rpg {
+    bottom: 156px !important;
+  }
 }
 
 #textbox-root.textbox-root--oneliner {
