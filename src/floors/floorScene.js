@@ -7,7 +7,11 @@ import { createTextBox } from "../ui/textbox.js";
 import { createGifOverlay } from "../ui/gifOverlay.js";
 import { renderMarkdown } from "../ui/markdown.js";
 import { projects } from "../content-loader.js";
-import karachiGif from "../../art/8bit karachi.gif";
+import { propConfig as aboutPropConfig } from "./config/about.js";
+
+const floorPropConfigs = {
+  about: aboutPropConfig,
+};
 
 function renderProject(project) {
   return renderMarkdown(project.raw);
@@ -58,27 +62,7 @@ export function registerFloorScene(k) {
     const textbox = createTextBox();
     const gifOverlay = createGifOverlay();
 
-    const propContent = {
-      window: "... somehow it's never raining in Karachi",
-    };
-
-    const touchedProps = new Set();
-    player.onCollide("prop", (prop) => {
-      if (prop.propName && propContent[prop.propName]) {
-        touchedProps.add(prop.propName);
-        textbox.show(propContent[prop.propName], "oneliner");
-        if (prop.propName === "window") gifOverlay.show(karachiGif);
-      }
-    });
-    player.onCollideEnd("prop", (prop) => {
-      if (prop.propName) {
-        touchedProps.delete(prop.propName);
-        if (touchedProps.size === 0) {
-          textbox.hide();
-          gifOverlay.hide();
-        }
-      }
-    });
+    const propConfig = floorPropConfigs[def.id] ?? {};
 
     // ponytail: Set of touched slugs so leaving one overlapping marker
     // doesn't hide the box while another is still touched; last-entered wins.
@@ -86,11 +70,16 @@ export function registerFloorScene(k) {
     player.onCollide("project-marker", (marker) => {
       touchedSlugs.add(marker.slug);
       const project = projects.find((p) => p.slug === marker.slug);
-      if (project) textbox.show(renderProject(project));
+      const config = propConfig[marker.slug] ?? {};
+      if (project) textbox.show(renderProject(project), config.size ?? "large");
+      if (config.gif) gifOverlay.show(config.gif);
     });
     player.onCollideEnd("project-marker", (marker) => {
       touchedSlugs.delete(marker.slug);
-      if (touchedSlugs.size === 0) textbox.hide();
+      if (touchedSlugs.size === 0) {
+        textbox.hide();
+        gifOverlay.hide();
+      }
     });
   });
 }

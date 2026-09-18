@@ -4,6 +4,7 @@
   --textbox-font-family: system-ui, sans-serif;
   --textbox-font-size: 16px;
   --textbox-line-height: 1.4;
+  --textbox-heading-scale: 1.2;
 }
 
 /* Sits absolutely inside <body>, which doubles as the shared positioned
@@ -20,10 +21,46 @@
   line-height: var(--textbox-line-height);
   pointer-events: none;
   z-index: 10;
+  overflow: hidden;
 }
 
 #textbox-root.visible {
   display: block;
+}
+
+/* Constrain headings across all presets */
+#textbox-root h1,
+#textbox-root h2,
+#textbox-root h3,
+#textbox-root h4,
+#textbox-root h5,
+#textbox-root h6 {
+  margin: 8px 0;
+  font-weight: bold;
+  line-height: var(--textbox-line-height);
+}
+
+#textbox-root h1 {
+  font-size: calc(var(--textbox-font-size) * 1.5 * var(--textbox-heading-scale));
+}
+
+#textbox-root h2 {
+  font-size: calc(var(--textbox-font-size) * 1.3 * var(--textbox-heading-scale));
+}
+
+#textbox-root h3 {
+  font-size: calc(var(--textbox-font-size) * 1.1 * var(--textbox-heading-scale));
+}
+
+#textbox-root h4,
+#textbox-root h5,
+#textbox-root h6 {
+  font-size: var(--textbox-font-size);
+}
+
+#textbox-root.textbox-root--large {
+  background: rgba(0, 0, 0, 0.75);
+  overflow-y: auto;
 }
 
 #textbox-root.textbox-root--small {
@@ -39,4 +76,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+#textbox-root.textbox-root--oneliner h1,
+#textbox-root.textbox-root--oneliner h2,
+#textbox-root.textbox-root--oneliner h3,
+#textbox-root.textbox-root--oneliner h4,
+#textbox-root.textbox-root--oneliner h5,
+#textbox-root.textbox-root--oneliner h6 {
+  display: inline;
+  margin: 0;
+  font-size: 14px;
 }
