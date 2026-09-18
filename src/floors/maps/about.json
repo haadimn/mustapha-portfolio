@@ -504,7 +504,7 @@
                  "type":"spawn",
                  "visible":true,
                  "x":24,
-                 "y":120
+                 "y":72
                 }],
          "opacity":1,
          "type":"objectgroup",

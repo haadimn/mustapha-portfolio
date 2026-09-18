@@ -74,6 +74,13 @@
   overflow-y: auto;
 }
 
+/* Classic RPG dialogue box: flush to the bottom edge, full width. */
+#textbox-root.textbox-root--rpg {
+  background: rgba(0, 0, 0, 0.9);
+  border-width: 3px 0 0 0;
+  overflow-y: auto;
+}
+
 #textbox-root.textbox-root--oneliner {
   background: rgba(0, 0, 0, 0.9);
   border: 1px solid #fff;

@@ -68,7 +68,7 @@ export function registerFloorScene(k) {
     // Intro gate: re-armed every scene load (page load/refresh), no
     // persistence needed. Blocks every marker but the phone until answered.
     let phoneAnswered = false;
-    textbox.show("The phone is ringing...", "oneliner");
+    textbox.show("The phone is ringing...", "rpg");
 
     // ponytail: Set of touched slugs so leaving one overlapping marker
     // doesn't hide the box while another is still touched; last-entered wins.

@@ -1,3 +1,3 @@
 # Turntables
 
-My Musical and DJ Portfolio will go here
+My Musical and DJ stuff will go here

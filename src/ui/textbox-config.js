@@ -10,6 +10,11 @@ export class TextboxConfig {
       position: "bottom",
       layout: { width: "calc(100% - 32px)", height: "140px", bottom: "16px", left: "16px", right: "16px", top: "auto" },
     },
+    rpg: {
+      cssClass: "textbox-root--rpg",
+      position: "bottom",
+      layout: { width: "100%", height: "180px", bottom: "0", left: "0", right: "0", top: "auto" },
+    },
     oneliner: {
       cssClass: "textbox-root--oneliner",
       position: "top",
