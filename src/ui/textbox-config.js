@@ -13,7 +13,7 @@ export class TextboxConfig {
     rpg: {
       cssClass: "textbox-root--rpg",
       position: "bottom",
-      layout: { width: "100%", height: "180px", bottom: "0", left: "0", right: "0", top: "auto" },
+      layout: { width: "100%", height: "110px", bottom: "0", left: "0", right: "0", top: "auto" },
     },
     oneliner: {
       cssClass: "textbox-root--oneliner",
