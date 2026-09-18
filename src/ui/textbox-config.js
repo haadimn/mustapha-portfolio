@@ -1,3 +1,6 @@
+// dpad: bottom 16px + height 132px (touchControls.css) + 8px gap.
+const RPG_MOBILE_BOTTOM = "156px";
+
 export class TextboxConfig {
   static PRESETS = {
     large: {
@@ -38,7 +41,12 @@ export class TextboxConfig {
   }
 
   getLayout() {
-    return { ...this.preset.layout, ...this.overrides };
+    const layout = { ...this.preset.layout, ...this.overrides };
+    // Same detection touchControls.js uses to decide whether to show the pad at all.
+    if (this.preset.cssClass === "textbox-root--rpg" && matchMedia("(pointer: coarse)").matches) {
+      layout.bottom = RPG_MOBILE_BOTTOM;
+    }
+    return layout;
   }
 
   getPosition() {
