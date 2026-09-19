@@ -109,9 +109,10 @@ export function registerFloorScene(k) {
     player.onCollide("barrier-text", (barrier) => textbox.show(barrier.text, "rpg"));
     player.onCollideEnd("barrier-text", () => textbox.hide());
 
-    // Escape always fully exits whatever textbox is open, regardless of type
-    // or how deep a project session is (skips topic->list step-back).
-    k.onKeyPress("escape", () => {
+    // Escape (or the on-screen cancel button) always fully exits whatever
+    // textbox is open, regardless of type or how deep a project session is
+    // (skips topic->list step-back).
+    k.onButtonPress("cancel", () => {
       if (projectSession.isActive()) {
         projectSession.close();
       } else {

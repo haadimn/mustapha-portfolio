@@ -31,7 +31,8 @@
 .dpad-down { grid-area: 3 / 2; }
 
 .dpad-btn,
-.interact-btn {
+.interact-btn,
+.cancel-btn {
   pointer-events: auto;
   touch-action: none;
   -webkit-tap-highlight-color: transparent;
@@ -51,4 +52,14 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
+}
+
+.cancel-btn {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
 }
