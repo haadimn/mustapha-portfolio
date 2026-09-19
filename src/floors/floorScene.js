@@ -108,5 +108,17 @@ export function registerFloorScene(k) {
 
     player.onCollide("barrier-text", (barrier) => textbox.show(barrier.text, "rpg"));
     player.onCollideEnd("barrier-text", () => textbox.hide());
+
+    // Escape always fully exits whatever textbox is open, regardless of type
+    // or how deep a project session is (skips topic->list step-back).
+    k.onKeyPress("escape", () => {
+      if (projectSession.isActive()) {
+        projectSession.close();
+      } else {
+        touchedSlugs.clear();
+        textbox.hide();
+        gifOverlay.hide();
+      }
+    });
   });
 }
