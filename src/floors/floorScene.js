@@ -5,6 +5,7 @@ import { markerObjectRules, findSpawnPos } from "./markers.js";
 import { floors } from "./index.js";
 import { createTextBox } from "../ui/textbox.js";
 import { createGifOverlay } from "../ui/gifOverlay.js";
+import { createProjectSession } from "../ui/project-session.js";
 import { renderMarkdown } from "../ui/markdown.js";
 import { projects } from "../content-loader.js";
 import { propConfig as aboutPropConfig } from "./config/about.js";
@@ -66,6 +67,7 @@ export function registerFloorScene(k) {
     const player = createPlayer(k, spawn ? k.vec2(spawn.x, spawn.y) : undefined);
     const textbox = createTextBox();
     const gifOverlay = createGifOverlay();
+    const projectSession = createProjectSession(k, player, textbox, gifOverlay);
 
     const propConfig = floorPropConfigs[def.id] ?? {};
 
@@ -80,14 +82,23 @@ export function registerFloorScene(k) {
     player.onCollide("project-marker", (marker) => {
       if (!phoneAnswered && marker.slug !== "phone") return;
       if (marker.slug === "phone") phoneAnswered = true;
-      touchedSlugs.add(marker.slug);
       const project = projects.find((p) => p.slug === marker.slug);
+      if (!project) return;
       const config = propConfig[marker.slug] ?? {};
-      if (project) textbox.show(renderProject(project), config.size ?? "large");
+
+      if (project.parts.length > 0) {
+        projectSession.open(project, config.size ?? "large");
+        if (config.gif) gifOverlay.show(config.gif);
+        return;
+      }
+      touchedSlugs.add(marker.slug);
+      textbox.show(renderProject(project), config.size ?? "large");
       if (config.gif) gifOverlay.show(config.gif);
     });
     player.onCollideEnd("project-marker", (marker) => {
       if (!phoneAnswered && marker.slug !== "phone") return;
+      const project = projects.find((p) => p.slug === marker.slug);
+      if (project && project.parts.length > 0) return; // closed via Left only
       touchedSlugs.delete(marker.slug);
       if (touchedSlugs.size === 0) {
         textbox.hide();

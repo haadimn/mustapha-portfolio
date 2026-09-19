@@ -91,6 +91,24 @@
   white-space: nowrap;
 }
 
+#textbox-root .topic-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+#textbox-root .topic-item {
+  padding: 2px 0;
+}
+
+#textbox-root .topic-item.selected {
+  color: #ffd866;
+}
+
+#textbox-root .topic-item.selected::before {
+  content: "▶ ";
+}
+
 #textbox-root.textbox-root--oneliner h1,
 #textbox-root.textbox-root--oneliner h2,
 #textbox-root.textbox-root--oneliner h3,
