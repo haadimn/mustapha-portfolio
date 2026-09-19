@@ -568,6 +568,72 @@
                  "width":3.54545454545455,
                  "x":28,
                  "y":143.909090909091
+                }, 
+                {
+                 "height":150,
+                 "id":47,
+                 "name":"wall barrier",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"barrier",
+                 "visible":true,
+                 "width":4.015625,
+                 "x":235.984375,
+                 "y":3.9375
+                }, 
+                {
+                 "height":150,
+                 "id":50,
+                 "name":"wall barrier",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"barrier",
+                 "visible":true,
+                 "width":4.01563,
+                 "x":-0.00781499999999369,
+                 "y":5.33333333333334
+                }, 
+                {
+                 "height":155,
+                 "id":51,
+                 "name":"wall barrier",
+                 "opacity":1,
+                 "rotation":90,
+                 "type":"barrier",
+                 "visible":true,
+                 "width":4.01563,
+                 "x":235.992185,
+                 "y":154.666666667
+                }, 
+                {
+                 "height":230,
+                 "id":52,
+                 "name":"wall barrier",
+                 "opacity":1,
+                 "rotation":90,
+                 "type":"barrier",
+                 "visible":true,
+                 "width":4.01563,
+                 "x":234.992185,
+                 "y":0.5
+                }, 
+                {
+                 "height":20,
+                 "id":53,
+                 "name":"wall barrier",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"slug",
+                         "type":"string",
+                         "value":"stair-barrier-left"
+                        }],
+                 "rotation":90,
+                 "type":"barrier",
+                 "visible":true,
+                 "width":3.54545,
+                 "x":26.560608333,
+                 "y":154.984866667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -587,7 +653,7 @@
          "y":0
         }],
  "nextlayerid":10,
- "nextobjectid":46,
+ "nextobjectid":54,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.2",
