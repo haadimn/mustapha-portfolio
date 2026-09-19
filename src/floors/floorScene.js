@@ -5,7 +5,7 @@ import { markerObjectRules, findSpawnPos } from "./markers.js";
 import { floors } from "./index.js";
 import { createTextBox } from "../ui/textbox.js";
 import { createGifOverlay } from "../ui/gifOverlay.js";
-import { createProjectSession } from "../ui/project-session.js";
+import { InteractiveTextBox } from "../ui/interactive-textbox.js";
 import { renderMarkdown } from "../ui/markdown.js";
 import { projects } from "../content-loader.js";
 import { propConfig as aboutPropConfig } from "./config/about.js";
@@ -67,7 +67,7 @@ export function registerFloorScene(k) {
     const player = createPlayer(k, spawn ? k.vec2(spawn.x, spawn.y) : undefined);
     const textbox = createTextBox();
     const gifOverlay = createGifOverlay();
-    const projectSession = createProjectSession(k, player, textbox, gifOverlay);
+    const projectSession = new InteractiveTextBox(k, player, gifOverlay);
 
     const propConfig = floorPropConfigs[def.id] ?? {};
 
