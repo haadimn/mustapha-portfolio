@@ -1,3 +1,3 @@
 # Info Board
 
-I'll pin my collaborators and credits heres
+shoutout to all my alpha testers, the feedback was super appreciated

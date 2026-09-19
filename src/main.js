@@ -26,6 +26,7 @@ const k = kaplay({
     up: { keyboard: ["up", "w"] },
     down: { keyboard: ["down", "s"] },
     interact: { keyboard: ["space"] },
+    cancel: { keyboard: ["escape"] },
   },
 });
 

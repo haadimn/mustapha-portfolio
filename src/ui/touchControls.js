@@ -18,6 +18,7 @@ export function createTouchControls(k) {
       <button data-button="down" class="dpad-btn dpad-down">▼</button>
     </div>
     <button data-button="interact" class="interact-btn">●</button>
+    <button data-button="cancel" class="cancel-btn">✕</button>
   `;
   root.classList.add("visible");
 
