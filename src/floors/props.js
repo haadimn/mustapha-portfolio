@@ -14,3 +14,21 @@ export function propObjectRules(k, tilesetSpriteKey) {
     },
   ];
 }
+
+// Same idiom as propObjectRules but with no sprite — an invisible collider
+// for blocking off small areas without touching the underlying tileset art.
+// A barrier with a `text` property also doubles as a textbox trigger, same
+// as project markers but showing its own text instead of project content.
+export function barrierObjectRules(k) {
+  return [
+    {
+      match: { type: "barrier" },
+      comps: ({ width, height, properties }) => [
+        k.area({ shape: new k.Rect(k.vec2(), width, height) }),
+        k.body({ isStatic: true }),
+        "barrier",
+        ...(properties.text ? ["barrier-text", { text: properties.text }] : []),
+      ],
+    },
+  ];
+}
