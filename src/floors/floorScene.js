@@ -1,6 +1,6 @@
 import { createPlayer, loadPlayerSprite } from "../objects/player.js";
 import { addFloorBounds, wallTileRules } from "./walls.js";
-import { propObjectRules } from "./props.js";
+import { propObjectRules, barrierObjectRules } from "./props.js";
 import { markerObjectRules, findSpawnPos } from "./markers.js";
 import { floors } from "./index.js";
 import { createTextBox } from "../ui/textbox.js";
@@ -55,7 +55,11 @@ export function registerFloorScene(k) {
     k.addTiledMap(def.mapData, {
       sprite: tilesetKey(def.id),
       tiles: wallTileRules(k),
-      objects: [...propObjectRules(k, tilesetFrameKey(def.id)), ...markerObjectRules(k)],
+      objects: [
+        ...propObjectRules(k, tilesetFrameKey(def.id)),
+        ...markerObjectRules(k),
+        ...barrierObjectRules(k),
+      ],
     });
     addFloorBounds(k, def.mapData);
     const spawn = findSpawnPos(def.mapData, def.spawn);
@@ -90,5 +94,8 @@ export function registerFloorScene(k) {
         gifOverlay.hide();
       }
     });
+
+    player.onCollide("barrier-text", (barrier) => textbox.show(barrier.text, "rpg"));
+    player.onCollideEnd("barrier-text", () => textbox.hide());
   });
 }

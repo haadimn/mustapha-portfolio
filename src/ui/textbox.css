@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "Not Jam Sci Mono 10";
-  src: url("../../art/fonts/NotJamSciMono10/NotJamSciMono10.ttf") format("truetype");
+  font-family: "Not Jam Old Style 11";
+  src: url("../../art/fonts/NotJamOldStyle11/NotJamOldStyle11.ttf") format("truetype");
   font-display: swap;
 }
 
 :root {
-  --textbox-font-family: "Not Jam Sci Mono 10", monospace;
+  --textbox-font-family: "Not Jam Old Style 11", monospace;
   --textbox-font-size: 18px;
   --textbox-line-height: 1.4;
   --textbox-heading-scale: 1.2;
