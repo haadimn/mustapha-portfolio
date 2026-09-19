@@ -622,12 +622,6 @@
                  "id":53,
                  "name":"wall barrier",
                  "opacity":1,
-                 "properties":[
-                        {
-                         "name":"slug",
-                         "type":"string",
-                         "value":"stair-barrier-left"
-                        }],
                  "rotation":90,
                  "type":"barrier",
                  "visible":true,
