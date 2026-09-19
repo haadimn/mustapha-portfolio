@@ -18,10 +18,12 @@ export function createPlayer(k, pos = k.vec2(160, 120)) {
     "player",
   ]);
 
-  k.onButtonDown("left", () => player.move(-SPEED, 0));
-  k.onButtonDown("right", () => player.move(SPEED, 0));
-  k.onButtonDown("up", () => player.move(0, -SPEED));
-  k.onButtonDown("down", () => player.move(0, SPEED));
+  player.locked = false;
+
+  k.onButtonDown("left", () => { if (!player.locked) player.move(-SPEED, 0); });
+  k.onButtonDown("right", () => { if (!player.locked) player.move(SPEED, 0); });
+  k.onButtonDown("up", () => { if (!player.locked) player.move(0, -SPEED); });
+  k.onButtonDown("down", () => { if (!player.locked) player.move(0, SPEED); });
 
   return player;
 }
