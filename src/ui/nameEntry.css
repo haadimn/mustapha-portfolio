@@ -1,0 +1,31 @@
+#name-entry-root {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: var(--textbox-font-family, monospace);
+  font-size: var(--textbox-font-size, 18px);
+  text-align: center;
+  z-index: 20;
+}
+
+#name-entry-root.visible {
+  display: block;
+}
+
+#name-entry-root input {
+  font: inherit;
+  padding: 4px 8px;
+  margin-right: 8px;
+}
+
+#name-entry-root button {
+  font: inherit;
+  padding: 4px 12px;
+}
