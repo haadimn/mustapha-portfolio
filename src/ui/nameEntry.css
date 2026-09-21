@@ -6,9 +6,9 @@
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 24px;
-  background: rgba(0, 0, 0, 0.85);
-  border: 2px solid #fff;
-  color: #fff;
+  background: #2b1b3d;
+  border: 3px solid #f4c430;
+  color: #f4c430;
   font-family: var(--textbox-font-family, monospace);
   font-size: var(--textbox-font-size, 18px);
   text-align: center;
@@ -23,9 +23,26 @@
   font: inherit;
   padding: 4px 8px;
   margin-right: 8px;
+  background: #1a0f28;
+  color: #f4c430;
+  border: 2px solid #f4c430;
+}
+
+#name-entry-root input:focus {
+  outline: none;
+  border-color: #fff;
 }
 
 #name-entry-root button {
   font: inherit;
   padding: 4px 12px;
+  background: #f4c430;
+  color: #2b1b3d;
+  border: 2px solid #f4c430;
+  cursor: pointer;
+}
+
+#name-entry-root button:hover {
+  background: #fff;
+  border-color: #fff;
 }
