@@ -19,6 +19,7 @@ export class Dashboard {
     k.onButtonPress("down", () => this.move(this.cols));
     k.onButtonPress("left", () => this.move(-1));
     k.onButtonPress("right", () => this.move(1));
+    k.onButtonPress("interact", () => this.select());
   }
 
   move(delta) {
@@ -42,6 +43,12 @@ export class Dashboard {
     this.index = 0;
     this.player.locked = true;
     this.render();
+  }
+
+  select() {
+    if (!this.isActive()) return;
+    const url = this.tiles[this.index]?.url;
+    if (url) window.open(url, "_blank", "noopener");
   }
 
   close() {
