@@ -64,7 +64,8 @@
   font-size: var(--textbox-font-size);
 }
 
-#textbox-root.textbox-root--large {
+#textbox-root.textbox-root--large,
+#textbox-root.textbox-root--dashboard {
   background: rgba(0, 0, 0, 0.75);
   overflow-y: auto;
 }
@@ -107,6 +108,32 @@
 
 #textbox-root .topic-item.selected::before {
   content: "▶ ";
+}
+
+#textbox-root .dashboard-grid {
+  display: grid;
+  gap: 16px;
+  padding: 8px;
+  overflow-y: auto;
+}
+
+#textbox-root .dashboard-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid #fff;
+}
+
+#textbox-root .dashboard-tile img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+#textbox-root .dashboard-tile.selected {
+  border-color: #ffd866;
+  outline: 2px solid #ffd866;
 }
 
 #textbox-root.textbox-root--oneliner h1,

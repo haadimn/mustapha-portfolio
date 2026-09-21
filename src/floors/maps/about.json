@@ -302,7 +302,7 @@
                          "value":732
                         }, 
                         {
-                         "name":"slug",
+                         "name":"dashboard",
                          "type":"string",
                          "value":"dj-setup"
                         }],
@@ -325,7 +325,7 @@
                          "value":733
                         }, 
                         {
-                         "name":"slug",
+                         "name":"dashboard",
                          "type":"string",
                          "value":"dj-setup"
                         }],
@@ -348,7 +348,7 @@
                          "value":734
                         }, 
                         {
-                         "name":"slug",
+                         "name":"dashboard",
                          "type":"string",
                          "value":"dj-setup"
                         }],
@@ -371,7 +371,7 @@
                          "value":915
                         }, 
                         {
-                         "name":"slug",
+                         "name":"dashboard",
                          "type":"string",
                          "value":"dj-setup"
                         }],
@@ -394,7 +394,7 @@
                          "value":916
                         }, 
                         {
-                         "name":"slug",
+                         "name":"dashboard",
                          "type":"string",
                          "value":"dj-setup"
                         }],
@@ -418,7 +418,7 @@
                          "value":917
                         }, 
                         {
-                         "name":"slug",
+                         "name":"dashboard",
                          "type":"string",
                          "value":"dj-setup"
                         }],
@@ -441,7 +441,7 @@
                          "value":891
                         }, 
                         {
-                         "name":"slug",
+                         "name":"dashboard",
                          "type":"string",
                          "value":"dj-setup"
                         }],
@@ -464,7 +464,7 @@
                          "value":893
                         }, 
                         {
-                         "name":"slug",
+                         "name":"dashboard",
                          "type":"string",
                          "value":"dj-setup"
                         }],
