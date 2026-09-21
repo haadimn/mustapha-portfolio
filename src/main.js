@@ -3,6 +3,8 @@ import { tiledPlugin } from "kaplay-plugin-tiled";
 import { registerFloorScene } from "./floors/floorScene.js";
 import { floors } from "./floors/index.js";
 import { createTouchControls } from "./ui/touchControls.js";
+import { promptPlayerName } from "./ui/nameEntry.js";
+import "./ui/nameEntry.css";
 
 if (import.meta.hot) {
   import.meta.hot.dispose(() => {
@@ -32,4 +34,4 @@ const k = kaplay({
 
 createTouchControls(k);
 registerFloorScene(k);
-k.go("floor", floors.about);
+promptPlayerName().then(() => k.go("floor", floors.about));
