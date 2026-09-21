@@ -28,5 +28,16 @@ export function markerObjectRules(k) {
             ]
           : [],
     },
+    {
+      match: { type: "prop" },
+      comps: ({ width, height, properties }) =>
+        properties.dashboard
+          ? [
+              k.area({ shape: new k.Rect(k.vec2(), width, height) }),
+              "dashboard-marker",
+              { slug: properties.dashboard },
+            ]
+          : [],
+    },
   ];
 }

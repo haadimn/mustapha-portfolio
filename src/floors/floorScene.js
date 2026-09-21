@@ -6,12 +6,17 @@ import { floors } from "./index.js";
 import { createTextBox } from "../ui/textbox.js";
 import { createGifOverlay } from "../ui/gifOverlay.js";
 import { InteractiveTextBox } from "../ui/interactive-textbox.js";
+import { Dashboard } from "../ui/dashboard.js";
 import { renderMarkdown } from "../ui/markdown.js";
 import { projects } from "../content-loader.js";
-import { propConfig as aboutPropConfig } from "./config/about.js";
+import { propConfig as aboutPropConfig, dashboardConfig as aboutDashboardConfig } from "./config/about.js";
 
 const floorPropConfigs = {
   about: aboutPropConfig,
+};
+
+const floorDashboardConfigs = {
+  about: aboutDashboardConfig,
 };
 
 function renderProject(project) {
@@ -68,8 +73,10 @@ export function registerFloorScene(k) {
     const textbox = createTextBox();
     const gifOverlay = createGifOverlay();
     const projectSession = new InteractiveTextBox(k, player, gifOverlay);
+    const dashboard = new Dashboard(k, player);
 
     const propConfig = floorPropConfigs[def.id] ?? {};
+    const dashConfig = floorDashboardConfigs[def.id] ?? {};
 
     // Intro gate: re-armed every scene load (page load/refresh), no
     // persistence needed. Blocks every marker but the phone until answered.
@@ -106,6 +113,12 @@ export function registerFloorScene(k) {
       }
     });
 
+    player.onCollide("dashboard-marker", (marker) => {
+      const cfg = dashConfig[marker.slug];
+      if (!cfg) return;
+      dashboard.open(cfg.tiles, cfg.cols ?? 3);
+    });
+
     player.onCollide("barrier-text", (barrier) => textbox.show(barrier.text, "rpg"));
     player.onCollideEnd("barrier-text", () => textbox.hide());
 
@@ -115,6 +128,8 @@ export function registerFloorScene(k) {
     k.onButtonPress("cancel", () => {
       if (projectSession.isActive()) {
         projectSession.close();
+      } else if (dashboard.isActive()) {
+        dashboard.close();
       } else {
         touchedSlugs.clear();
         textbox.hide();

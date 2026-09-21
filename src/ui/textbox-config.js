@@ -23,6 +23,11 @@ export class TextboxConfig {
       position: "top",
       layout: { width: "calc(100% - 32px)", height: "auto", maxHeight: "50px", bottom: "auto", left: "16px", right: "16px", top: "16px" },
     },
+    dashboard: {
+      cssClass: "textbox-root--dashboard",
+      position: "fullscreen",
+      layout: { width: "100%", height: "100%", bottom: "auto", left: "auto", right: "auto", top: "auto" },
+    },
   };
 
   constructor(presetName = "large", overrides = {}) {
