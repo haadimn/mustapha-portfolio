@@ -14,6 +14,7 @@ export class Dashboard {
     this.tiles = [];
     this.cols = 3;
     this.index = 0;
+    this.title = "";
 
     k.onButtonPress("up", () => this.move(-this.cols));
     k.onButtonPress("down", () => this.move(this.cols));
@@ -33,13 +34,17 @@ export class Dashboard {
     const tiles = this.tiles
       .map((tile, i) => renderTile(tile, i, this.index))
       .join("\n");
-    const html = `<div class="dashboard-grid" style="grid-template-columns: repeat(${this.cols}, 1fr)">${tiles}</div>`;
+    const title = this.title
+      ? `<p class="dashboard-title">${escapeHtml(this.title)}</p>`
+      : "";
+    const html = `${title}<div class="dashboard-grid" style="grid-template-columns: repeat(${this.cols}, 1fr)">${tiles}</div>`;
     this.textbox.show(html, "dashboard");
   }
 
-  open(tiles, cols = 3) {
+  open(tiles, cols = 3, title = "") {
     this.tiles = tiles;
     this.cols = cols;
+    this.title = title;
     this.index = 0;
     this.player.locked = true;
     this.render();

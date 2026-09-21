@@ -10,6 +10,7 @@ export const propConfig = {
 export const dashboardConfig = {
   "dj-setup": {
     cols: 2,
+    title: "Find my sets, mixes, and artist socials here:",
     tiles: [
       { image: soundcloudIcon, label: "SoundCloud", url: "https://soundcloud.com/user-479337630" },
       { image: linktreeIcon, label: "Linktree", url: "https://linktr.ee/mu.sta.ph.a" },

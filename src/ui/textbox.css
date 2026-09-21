@@ -110,6 +110,11 @@
   content: "▶ ";
 }
 
+#textbox-root .dashboard-title {
+  margin: 0 0 8px;
+  padding: 0 8px;
+}
+
 #textbox-root .dashboard-grid {
   display: grid;
   gap: 16px;

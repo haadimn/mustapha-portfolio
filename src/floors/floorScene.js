@@ -116,7 +116,7 @@ export function registerFloorScene(k) {
     player.onCollide("dashboard-marker", (marker) => {
       const cfg = dashConfig[marker.slug];
       if (!cfg) return;
-      dashboard.open(cfg.tiles, cfg.cols ?? 3);
+      dashboard.open(cfg.tiles, cfg.cols ?? 3, cfg.title);
     });
 
     player.onCollide("barrier-text", (barrier) => textbox.show(barrier.text, "rpg"));
