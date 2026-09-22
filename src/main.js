@@ -22,6 +22,7 @@ const k = kaplay({
   height: height * tileheight,
   stretch: true,
   letterbox: true,
+  background: "#2b1b3d",
   buttons: {
     left: { keyboard: ["left", "a"] },
     right: { keyboard: ["right", "d"] },
