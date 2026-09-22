@@ -144,6 +144,32 @@
   outline: 2px solid #ffd866;
 }
 
+#textbox-root .gallery-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  height: 100%;
+  overflow-y: auto;
+  text-align: center;
+}
+
+#textbox-root .gallery-slide img {
+  max-width: 60%;
+  max-height: 40vh;
+  object-fit: contain;
+}
+
+#textbox-root .gallery-caption {
+  margin: 0;
+}
+
+#textbox-root .gallery-description {
+  margin: 0;
+  max-width: 60ch;
+}
+
 #textbox-root.textbox-root--oneliner h1,
 #textbox-root.textbox-root--oneliner h2,
 #textbox-root.textbox-root--oneliner h3,

@@ -21,10 +21,11 @@ function renderTopic(part) {
 // Renders through its own text box (same shared TextboxManager singleton
 // underneath, so font/sizing/positioning stay identical to plain textboxes).
 export class InteractiveTextBox {
-  constructor(k, player, gifOverlay) {
+  constructor(k, player, gifOverlay, onSelectPart) {
     this.k = k;
     this.player = player;
     this.gifOverlay = gifOverlay;
+    this.onSelectPart = onSelectPart;
     this.textbox = createTextBox();
     this.project = null;
     this.sizePreset = "large";
@@ -81,6 +82,8 @@ export class InteractiveTextBox {
   interact() {
     if (!this.isActive()) return;
     if (this.mode === "list") {
+      const part = this.project.parts[this.index];
+      if (this.onSelectPart?.(part, this.project)) return;
       this.mode = "topic";
       this.topicIndex = this.index;
       this.render();

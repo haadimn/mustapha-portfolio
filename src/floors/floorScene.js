@@ -7,9 +7,14 @@ import { createTextBox } from "../ui/textbox.js";
 import { createGifOverlay } from "../ui/gifOverlay.js";
 import { InteractiveTextBox } from "../ui/interactive-textbox.js";
 import { Dashboard } from "../ui/dashboard.js";
+import { Gallery } from "../ui/gallery.js";
 import { renderMarkdown } from "../ui/markdown.js";
 import { projects } from "../content-loader.js";
-import { propConfig as aboutPropConfig, dashboardConfig as aboutDashboardConfig } from "./config/about.js";
+import {
+  propConfig as aboutPropConfig,
+  dashboardConfig as aboutDashboardConfig,
+  galleryConfig as aboutGalleryConfig,
+} from "./config/about.js";
 
 const floorPropConfigs = {
   about: aboutPropConfig,
@@ -17,6 +22,10 @@ const floorPropConfigs = {
 
 const floorDashboardConfigs = {
   about: aboutDashboardConfig,
+};
+
+const floorGalleryConfigs = {
+  about: aboutGalleryConfig,
 };
 
 function renderProject(project) {
@@ -72,11 +81,24 @@ export function registerFloorScene(k) {
     const player = createPlayer(k, spawn ? k.vec2(spawn.x, spawn.y) : undefined);
     const textbox = createTextBox();
     const gifOverlay = createGifOverlay();
-    const projectSession = new InteractiveTextBox(k, player, gifOverlay);
-    const dashboard = new Dashboard(k, player);
-
     const propConfig = floorPropConfigs[def.id] ?? {};
     const dashConfig = floorDashboardConfigs[def.id] ?? {};
+    const galConfig = floorGalleryConfigs[def.id] ?? {};
+
+    // ponytail: dashboard/gallery must be constructed (and their "interact"
+    // handlers registered) before projectSession — its onSelectPart callback
+    // opens them synchronously from inside its own "interact" dispatch, and
+    // button handlers fire in registration order within one press.
+    const dashboard = new Dashboard(k, player);
+    const gallery = new Gallery(k, player);
+    const projectSession = new InteractiveTextBox(k, player, gifOverlay, (part, project) => {
+      const gallerySlug = propConfig[project.slug]?.topicGalleries?.[part.title];
+      const cfg = gallerySlug && galConfig[gallerySlug];
+      if (!cfg) return false;
+      projectSession.close();
+      gallery.open(cfg.tiles);
+      return true;
+    });
 
     // Intro gate: re-armed every scene load (page load/refresh), no
     // persistence needed. Blocks every marker but the phone until answered.
@@ -130,6 +152,8 @@ export function registerFloorScene(k) {
         projectSession.close();
       } else if (dashboard.isActive()) {
         dashboard.close();
+      } else if (gallery.isActive()) {
+        gallery.close();
       } else {
         touchedSlugs.clear();
         textbox.hide();
