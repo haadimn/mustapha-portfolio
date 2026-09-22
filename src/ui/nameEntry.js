@@ -14,12 +14,7 @@ function submitToFormspree(name) {
   }).catch((err) => console.error("Formspree submission failed:", err));
 }
 
-// ponytail: skips the prompt entirely if a name is already stored, so returning
-// players aren't asked twice. Clear localStorage (or add a "change name" UI) to reset.
 export function promptPlayerName() {
-  const existing = getPlayerName();
-  if (existing) return Promise.resolve(existing);
-
   const root = document.getElementById("name-entry-root");
 
   return new Promise((resolve) => {
