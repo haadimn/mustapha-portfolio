@@ -5,7 +5,10 @@ function renderSlide(tile) {
   const description = tile.description
     ? `<p class="gallery-description">${escapeHtml(tile.description)}</p>`
     : "";
-  return `<div class="gallery-slide"><img src="${tile.image}" /><h2 class="gallery-caption">${escapeHtml(tile.label)}</h2>${description}</div>`;
+  const redirect = tile.url
+    ? `<a class="gallery-redirect" href="${escapeHtml(tile.url)}" target="_blank" rel="noopener">${escapeHtml(tile.linkLabel ?? "Open link")} ↗</a>`
+    : "";
+  return `<div class="gallery-slide"><img src="${tile.image}" /><h2 class="gallery-caption">${escapeHtml(tile.label)}</h2>${description}${redirect}</div>`;
 }
 
 // One big image + caption at a time, not a grid — Left/Right flips between

@@ -27,8 +27,9 @@ export const galleryConfig = {
     tiles: [
       {
         image: reachingHandsImg,
-        label: "Reaching Hands",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        label: "Holding Hands",
+        description: "i designed the holding hands as a visual sequence to explore the idea of connectivity and intimacy on the dancefloor. the visuals are music responsive and change in colour, frequency and vibration based on the volume, speed, and bass in the input music. originally i programmed for the visuals for a house party and am now expanding the concept to be more sophisticated with broader animation and more inputs such as MIDI mapping from a CDJ",
+        linkLabel: "Redirect to Hydra",
         url: "https://hydra.ojack.xyz/?code=aHlkcmElM0ElMjAlMEFzMC5pbml0SW1hZ2UoJTIyaHR0cHMlM0ElMkYlMkZ0NC5mdGNkbi5uZXQlMkZqcGclMkYwNCUyRjc3JTJGMzYlMkY1NSUyRjM2MF9GXzQ3NzM2NTU5Ml9LYk02RDlBOXpHMGJhZ2pxenV3b3VQTjdiY2ZjUkpUMi5qcGclMjIpJTBBc3JjKHMwKSUwQSUyMCUyMC5tb2R1bGF0ZShvc2MoMjAlMkMlMjAwLjElMkMlMjAxKSklMEElMjAlMjAucm90YXRlKDAuOCklMEElMjAlMjAucm90YXRlKCgpJTIwJTNEJTNFJTIwYS5mZnQlNUIxJTVEJTIwKiUyMDAuMDUpJTIwJTIwJTIwJTIwJTIwJTIwJTJGJTJGJTIwUm90YXRlJTIwd2l0aCUyMG1pZC1yYW5nZSUyMGZyZXF1ZW5jaWVzJTBBJTIwJTIwLnNjYWxlKCgpJTIwJTNEJTNFJTIwYS5mZnQlNUIwJTVEJTIwKiUyMDAuNSUyMCUyQiUyMDEpJTIwJTIwJTIwJTJGJTJGJTIwU2NhbGUlMjB3aXRoJTIwYmFzcyUwQSUyMCUyMC5jb2xvciglMEElMjAlMjAlMjAlMjAoKSUyMCUzRCUzRSUyMDAuNSUyMCUyQiUyME1hdGguc2luKHRpbWUlMjAqJTIwMC41KSUyMColMjAwLjMlMjAlMkIlMjBhLmZmdCU1QjAlNUQlMjAqJTIwMC41JTJDJTIwJTJGJTJGJTIwQmFzZSUyMCUyQiUyMHNpbiUyMG1vZCUyMCUyQiUyMHNvdW5kJTBBJTIwJTIwJTIwJTIwKCklMjAlM0QlM0UlMjAwLjMlMjAlMkIlMjBNYXRoLnNpbih0aW1lJTIwKiUyMDAuMyklMjAqJTIwMC4zJTIwJTJCJTIwYS5mZnQlNUIxJTVEJTIwKiUyMDAuNSUyQyUwQSUyMCUyMCUyMCUyMCgpJTIwJTNEJTNFJTIwMC44JTIwJTJCJTIwTWF0aC5zaW4odGltZSUyMColMjAwLjIpJTIwKiUyMDAuMyUyMCUyQiUyMGEuZmZ0JTVCMiU1RCUyMColMjAwLjUlMEElMjAlMjApJTBBJTIwJTIwLm91dCgp",
       },
     ],

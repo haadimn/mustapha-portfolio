@@ -170,6 +170,18 @@
   max-width: 60ch;
 }
 
+#textbox-root .gallery-redirect {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 4px 12px;
+  border: 1px solid #ffd866;
+  outline: 2px solid #ffd866;
+  color: #ffd866;
+  text-decoration: none;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
 #textbox-root.textbox-root--oneliner h1,
 #textbox-root.textbox-root--oneliner h2,
 #textbox-root.textbox-root--oneliner h3,
