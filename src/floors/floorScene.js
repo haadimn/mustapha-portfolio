@@ -77,6 +77,7 @@ export function registerFloorScene(k) {
       ],
     });
     addFloorBounds(k, def.mapData);
+    const phoneProp = k.get("prop").find((p) => p.propName === "phone");
     const spawn = findSpawnPos(def.mapData, def.spawn);
     const player = createPlayer(k, spawn ? k.vec2(spawn.x, spawn.y) : undefined);
     const textbox = createTextBox();
@@ -105,12 +106,37 @@ export function registerFloorScene(k) {
     let phoneAnswered = false;
     textbox.show("The phone is ringing...", "rpg");
 
+    // Beta testers couldn't spot the phone amid the tileset art, so it bounces
+    // and flashes until answered instead of just being a static tile.
+    let stopPhoneHighlight = () => {};
+    if (phoneProp) {
+      phoneProp.use(k.animate());
+      phoneProp.use(k.opacity());
+      phoneProp.animate("scale", [k.vec2(1), k.vec2(1.3)], {
+        duration: 0.35,
+        direction: "ping-pong",
+        easing: k.easings.easeInOutSine,
+      });
+      const cancelFlash = phoneProp.onUpdate(() => {
+        phoneProp.opacity = k.wave(0.5, 1, k.time() * 8);
+      });
+      stopPhoneHighlight = () => {
+        phoneProp.unanimate("scale");
+        cancelFlash.cancel();
+        phoneProp.scale = k.vec2(1);
+        phoneProp.opacity = 1;
+      };
+    }
+
     // ponytail: Set of touched slugs so leaving one overlapping marker
     // doesn't hide the box while another is still touched; last-entered wins.
     const touchedSlugs = new Set();
     player.onCollide("project-marker", (marker) => {
       if (!phoneAnswered && marker.slug !== "phone") return;
-      if (marker.slug === "phone") phoneAnswered = true;
+      if (marker.slug === "phone") {
+        phoneAnswered = true;
+        stopPhoneHighlight();
+      }
       const project = projects.find((p) => p.slug === marker.slug);
       if (!project) return;
       const config = propConfig[marker.slug] ?? {};
