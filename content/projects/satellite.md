@@ -1,6 +1,6 @@
 # Visual Art Portfolio
 
-Through code I like to create and explore the various ways light and sound work together to shape environments people get together
+Through code I like to create and explore the various ways light and sound work together to shape environments where people get together
 
 ## Visual Art
 
