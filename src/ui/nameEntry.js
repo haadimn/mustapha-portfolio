@@ -29,9 +29,10 @@ export function promptPlayerName() {
 
     root.querySelector("#name-entry-form").addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = root.querySelector("#name-entry-input").value.trim() || "Guest";
+      const rawName = root.querySelector("#name-entry-input").value.trim();
+      const name = rawName || "Guest";
       localStorage.setItem(STORAGE_KEY, name);
-      submitToFormspree(name);
+      if (rawName) submitToFormspree(rawName);
       root.classList.remove("visible");
       root.innerHTML = "";
       resolve(name);
