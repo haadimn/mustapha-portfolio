@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>portfolio</title>
     <style>
-      html, body { margin: 0; height: 100%; background: #2b1b3d; touch-action: none; }
+      html, body { margin: 0; height: 100%; background: #2b1b3d; touch-action: none;
+        -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
+      input { -webkit-user-select: text; user-select: text; }
       /* ponytail: KAPLAY appends its canvas straight into <body> (no `root`
          option set), so body doubles as the shared positioned container for
          canvas + #textbox-root. Upgrade path: if KAPLAY gets a dedicated
